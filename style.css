@@ -14,13 +14,11 @@ body {
 h1 {
     text-align: center;
     font-size: 1.8em;
-    font-family: 'Times New Roman', Times, serif;
 }
 
 p {
     text-align: center;
     font-size: 1.2em;
-    font-family: 'Times New Roman', Times, serif;
 }
 
 img {
@@ -35,11 +33,11 @@ img {
     color: #ffeb3b; /* Lighter yellow color for the figure captions */
 }
 
-/* Container for images and figures */
+/* Mobile View: One-column grid with a 10px gap */
 .container {
     display: grid;
-    grid-template-columns: 1fr; /* Single column for mobile view */
-    gap: 15px; /* Increased gap between figures */
+    grid-template-columns: 1fr; /* One column for mobile view */
+    gap: 10px; /* 10px gap between rows and columns */
 }
 
 figure {
@@ -48,67 +46,59 @@ figure {
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 10px;
-    font-family: 'Times New Roman', Times, serif;
 }
 
-/* Scroll to Top link styling */
-.scroll-to-top {
-    text-align: center;
-    margin-top: 20px;
-}
-
-/* Media Query for Tablet View (min-width: 768px) */
-@media (min-width: 768px) {
-    body {
-        font-size: 20px;
-    }
+/* Tablet View: Two-column grid and circular figures, last figure takes both columns */
+@media (min-width: 772px) {
     .container {
         grid-template-columns: repeat(2, 1fr); /* Two columns for tablet view */
     }
+
     figure {
-        border-radius: 15px;
+        border-radius: 50%; /* Circular figures */
+    }
+
+    .container figure:last-child {
+        grid-column: span 2; /* Last figure spans both columns */
     }
 }
 
-/* Media Query for Large Screen View (min-width: 992px) */
+/* Large Screen View: Every third figure spans both columns, no border-radius */
 @media (min-width: 992px) {
-    body {
-        font-size: 22px;
-    }
     .container {
         grid-template-columns: repeat(3, 1fr); /* Three columns for large screens */
     }
+
     figure {
-        border-radius: 0;
+        border-radius: 0; /* Remove border-radius on large screens */
+    }
+
+    .container figure:nth-child(3n) {
+        grid-column: span 2; /* Every third figure spans both columns */
     }
 }
 
-/* Media Query to toggle "Jump to Top" link visibility */
-@media (max-width: 767px) {
-    .scroll-to-top {
-        display: none; /* Hide the Jump to Top link on smaller screens */
-    }
-}
-
-/* Media Query for prefers-reduced-motion */
+/* Prefers Reduced Motion: Disable scroll behavior */
 @media (prefers-reduced-motion: reduce) {
-    * {
-        animation: none;
-        transition: none;
+    html {
+        scroll-behavior: auto; /* Remove smooth scroll behavior */
     }
 }
 
-/* Media Query for prefers-color-scheme */
+/* Dark Mode: Adjust background, text, and border colors */
 @media (prefers-color-scheme: dark) {
     body {
         background-color: #333;
         color: #f0f0f0;
     }
+
     figure {
-        background-color: #444;
-        color: #fff;
+        background-color: #222; /* Dark background color */
+        border: 1px solid black; /* Black border */
+        color: #ffeb3b; /* Light yellow text */
     }
+
     .label {
-        color: #ffeb3b; /* Lighter yellow color for the figure captions in dark mode */
+        color: #ffeb3b; /* Light yellow color for captions */
     }
 }
