@@ -49,6 +49,12 @@ figure {
     font-family: 'Times New Roman', Times, serif; /* Updated font family */
 }
 
+/* Scroll to Top link styling */
+.scroll-to-top {
+    text-align: center;
+    margin-top: 20px;
+}
+
 /* Media Query for Tablet View (min-width: 768px) */
 @media (min-width: 768px) {
     body {
@@ -72,6 +78,13 @@ figure {
     }
     figure {
         border-radius: 0;
+    }
+}
+
+/* Media Query to toggle "Jump to Top" link visibility */
+@media (max-width: 767px) {
+    .scroll-to-top {
+        display: none; /* Hide the Jump to Top link on smaller screens */
     }
 }
 
