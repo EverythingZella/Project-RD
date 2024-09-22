@@ -8,19 +8,19 @@ body {
     padding: 10px;
     margin: 10px;
     font-size: 18px;
-    font-family: 'Times New Roman', Times, serif; /* Updated font family */
+    font-family: 'Times New Roman', Times, serif;
 }
 
 h1 {
     text-align: center;
     font-size: 1.8em;
-    font-family: 'Times New Roman', Times, serif; /* Updated font family */
+    font-family: 'Times New Roman', Times, serif;
 }
 
 p {
     text-align: center;
     font-size: 1.2em;
-    font-family: 'Times New Roman', Times, serif; /* Updated font family */
+    font-family: 'Times New Roman', Times, serif;
 }
 
 img {
@@ -31,14 +31,15 @@ img {
 
 .label {
     text-align: center;
-    font-family: 'Times New Roman', Times, serif; /* Updated font family */
+    font-family: 'Times New Roman', Times, serif;
     color: #ffeb3b; /* Lighter yellow color for the figure captions */
 }
 
+/* Container for images and figures */
 .container {
     display: grid;
     grid-template-columns: 1fr; /* Single column for mobile view */
-    gap: 10px;
+    gap: 15px; /* Increased gap between figures */
 }
 
 figure {
@@ -47,7 +48,7 @@ figure {
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 10px;
-    font-family: 'Times New Roman', Times, serif; /* Updated font family */
+    font-family: 'Times New Roman', Times, serif;
 }
 
 /* Scroll to Top link styling */
