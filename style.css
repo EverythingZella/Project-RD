@@ -4,42 +4,40 @@ html {
 }
 
 body {
-    background-color: #dedede;
-    padding: 5px;
-    margin: 15px;
-    font-size: 25px;
-    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin: 10px;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif; /* Updated font family */
 }
 
 h1 {
     text-align: center;
-    font-family: Arial, sans-serif;
-    font-size: 1.95em;
+    font-size: 1.8em;
+    font-family: 'Times New Roman', Times, serif; /* Updated font family */
 }
 
-h2 {
+p {
     text-align: center;
-}
-
-li {
-    margin-top: 20px;
+    font-size: 1.2em;
+    font-family: 'Times New Roman', Times, serif; /* Updated font family */
 }
 
 img {
-    border: 5px solid blue;
-    border-radius: 35px;
+    border: 3px solid #333;
+    border-radius: 10px;
     width: 100%;
 }
 
 .label {
     text-align: center;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Times New Roman', Times, serif; /* Updated font family */
 }
 
 .container {
     display: grid;
-    grid-template-columns: 1fr; /* One column grid for mobile */
-    grid-gap: 10px; /* Gap between rows and columns */
+    grid-template-columns: 1fr; /* Single column for mobile view */
+    gap: 10px;
 }
 
 figure {
@@ -47,51 +45,52 @@ figure {
     padding: 10px;
     background-color: #fff;
     border: 1px solid #ccc;
-    border-radius: 35px; /* Default border-radius */
+    border-radius: 10px;
+    font-family: 'Times New Roman', Times, serif; /* Updated font family */
 }
 
-/* Media Query for Tablet View (min-width: 772px) */
-@media (min-width: 772px) {
+/* Media Query for Tablet View (min-width: 768px) */
+@media (min-width: 768px) {
+    body {
+        font-size: 20px;
+    }
     .container {
-        grid-template-columns: repeat(2, 1fr); /* Two-column grid */
+        grid-template-columns: repeat(2, 1fr); /* Two columns for tablet view */
     }
-
     figure {
-        border-radius: 50%; /* Circular figures */
-    }
-
-    figure:last-child {
-        grid-column: span 2; /* Last figure spans both columns */
+        border-radius: 15px;
     }
 }
 
 /* Media Query for Large Screen View (min-width: 992px) */
 @media (min-width: 992px) {
+    body {
+        font-size: 22px;
+    }
     .container {
-        grid-template-columns: repeat(3, 1fr); /* Three-column grid */
+        grid-template-columns: repeat(3, 1fr); /* Three columns for large screens */
     }
-
     figure {
-        border-radius: 0; /* Remove border-radius */
-    }
-
-    figure:nth-child(3n) {
-        grid-column: span 2; /* Every third figure spans both columns */
+        border-radius: 0;
     }
 }
 
 /* Media Query for prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto; /* Disable smooth scrolling */
+    * {
+        animation: none;
+        transition: none;
     }
 }
 
-/* Media Query for Dark Mode */
+/* Media Query for prefers-color-scheme */
 @media (prefers-color-scheme: dark) {
+    body {
+        background-color: #333;
+        color: #f0f0f0;
+    }
     figure {
-        background-color: #333; /* Dark background */
-        color: #ffeb3b; /* Light (yellowish) text */
-        border-color: black; /* Black border */
+        background-color: #444;
+        color: #fff;
     }
 }
